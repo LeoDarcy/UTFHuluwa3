@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.collections.*?>
+<?import javafx.scene.paint.*?>
+
+<SplitPane dividerPositions="0.14357262103505844" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#ResponseKeyPressed" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller">
+  <items>
+    <AnchorPane minHeight="160.0" minWidth="100.0" prefHeight="800.0" prefWidth="100.0">
+         <children>
+             <Button fx:id="begin_btn" layoutX="16.0" layoutY="22.0" mnemonicParsing="false" onAction="#BeginBattle" onKeyPressed="#ResponseKeyPressed" text="开始战斗" />
+            <Button fx:id="read_btn" layoutX="15.0" layoutY="109.0" mnemonicParsing="false" onAction="#OpenFile" text="读取战斗" />
+            <Text layoutX="19.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="战斗信息" wrappingWidth="98.30029296875" />
+            <Button fx:id="save_btn" layoutX="15.0" layoutY="65.0" mnemonicParsing="false" onAction="#SaveFile" text="保存战斗" />
+
+            <TextArea fx:id="textField" layoutX="9.0" layoutY="298.0" prefHeight="468.0" prefWidth="151.0" />
+            <Text layoutX="19.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="阵型选择" />
+             <ComboBox fx:id="selectedstrategy" layoutX="10.0" layoutY="169.0" onAction="#SetStrategy" prefWidth="150.0" promptText="长蛇阵">
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Item 1" />
+                         <String fx:value="Item 2" />
+                         <String fx:value="Item 3" />
+                     </FXCollections>
+                 </items>
+             </ComboBox>
+            <ComboBox fx:id="selectedmap" layoutX="10.0" layoutY="231.0" onAction="#SetMap" prefWidth="150.0" promptText="默认" />
+            <Text layoutX="19.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="地图选择" />
+
+         </children></AnchorPane>
+    <AnchorPane fx:id="MapPane" minHeight="200.0" minWidth="200.0" prefHeight="800.0" prefWidth="1100.0">
+         <children>
+            <Text fx:id="clock" layoutX="35.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="564.30029296875" />
+            <Canvas fx:id="mainCanvas" height="700.0" layoutX="11.0" layoutY="67.0" width="1000.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
